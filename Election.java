@@ -1,14 +1,18 @@
-*******
+/** 
  * Name: Neil Oza
  * Date 3/4/2024
  * Program: Display results of an election
  */
+
+
 // Importing Scanner, and tool to format 
 import java.text.NumberFormat;
 import java.util.Scanner;
 // Start of the program
 public class Election {
     public static void main(String[] args) {
+        // Setting up format for percentages
+        NumberFormat percent = NumberFormat.getPercentInstance();
         // Initializing scanner
         Scanner userInput = new Scanner(System.in);
         // Asking user to input number of votes for each person
@@ -26,10 +30,10 @@ public class Election {
         double totalAwbrey = votesNYA + votesNJA + votesCTA;
         double totalMartinez = votesNYM + votesNJM + votesCTM;
         // Finding the percents
-        double percentAwbrey = totalAwbrey / (totalAwbrey + totalMartinez);
-        double percentMartinez = totalMartinez / (totalAwbrey + totalMartinez);
+        double percentAwbrey = (totalAwbrey / (totalAwbrey + totalMartinez)) * 100;
+        double percentMartinez = (totalMartinez / (totalAwbrey + totalMartinez)) * 100;
         // Printing the outcome of the election
-        System.out.println("")
+        System.out.println("Candidate   Votes    Percentage\nAwbrey      " + totalAwbrey + "    " + percentAwbrey +" %" + "\nMartinez    " + totalMartinez + "    " + percentMartinez + " %" + "\n\nTOTAL VOTES = " + (totalAwbrey + totalMartinez));
         
         
 
