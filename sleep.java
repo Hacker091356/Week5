@@ -28,7 +28,7 @@ public class sleep{
         int timeAsleep = numberOfYearsInDays * 8;
        
         //Printing the outcome
-        System.out.print("You have been alive for " + numberOfYearsInDays +" days.");
+        System.out.println("You have been alive for " + numberOfYearsInDays +" days.");
         System.out.println("You have been asleep for " + (number.format(timeAsleep)) + " " +"hours");
         
 
