@@ -33,7 +33,7 @@ public class Order {
         System.out.println("Tax: " + money.format(amountTax));
         System.out.println("Final Total: " + money.format(totalAfterTax));
         //Asking for amount paid
-        System.out.println("Enter the amount tendered: $");
+        System.out.print("Enter the amount tendered: $");
         double changeRendered = userInput.nextDouble();
         //Closing scanner to avoid waste of resources
        
