@@ -14,6 +14,7 @@ public class taxiTest {
        int numPassengers = userInput.nextInt();
        //Closing scanner to avoid wasteage of resources
        userInput.close();
+     
        int numPassengerLeftOver = numPassengers%4;
        int numCabs = (numPassengers - numPassengerLeftOver)/4;
        //Printing to console

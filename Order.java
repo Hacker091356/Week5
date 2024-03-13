@@ -11,6 +11,7 @@ public class Order {
         //Initializing the scanner
         Scanner userInput = new Scanner(System.in);
         System.out.print("Enter your name:");
+        var name = userInput.nextLine();
         System.out.print("\nEnter the number of burgers:");
         int numBurgers = userInput.nextInt();
         System.out.print("\nEnter the number of fries:");
@@ -23,8 +24,8 @@ public class Order {
         double priceSodas = (numSodas * 0.99);
         double totalBeforeTax = (priceBurgers + priceFries + priceSodas);
         double tax = ((8.5)/100);
-        double amountTax = ((8.5)/100) * totalBeforeTax;
-        double totalAfterTax = (totalBeforeTax *((8.5)/100)) + totalBeforeTax;
+        double amountTax = (tax * totalBeforeTax);
+        double totalAfterTax = (totalBeforeTax * tax) + totalBeforeTax;
 
         // For number format
         NumberFormat money = NumberFormat.getCurrencyInstance();
@@ -36,7 +37,7 @@ public class Order {
         System.out.print("Enter the amount tendered: $");
         double changeRendered = userInput.nextDouble();
         //Closing scanner to avoid waste of resources
-       
+       userInput.close();
         //Printing the change
         double changeReturned = (changeRendered - totalAfterTax);
         System.out.print("Change: " + money.format(changeReturned));
